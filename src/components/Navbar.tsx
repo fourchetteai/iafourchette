@@ -3,10 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import LanguageToggle from './LanguageToggle';
 import { Button } from "@/components/ui/button";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,9 +38,9 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-foreground hover:text-iafourchette-blue transition-colors">Accueil</a>
-          <a href="#services" className="text-foreground hover:text-iafourchette-blue transition-colors">Services</a>
-          <a href="#contact" className="text-foreground hover:text-iafourchette-blue transition-colors">Contact</a>
+          <a href="#" className="text-foreground hover:text-iafourchette-blue transition-colors">{t('nav.home')}</a>
+          <a href="#services" className="text-foreground hover:text-iafourchette-blue transition-colors">{t('nav.services')}</a>
+          <a href="#contact" className="text-foreground hover:text-iafourchette-blue transition-colors">{t('nav.contact')}</a>
           <LanguageToggle />
         </div>
 
@@ -56,11 +58,11 @@ const Navbar = () => {
         <div className="md:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md py-4 shadow-lg animate-fade-in">
           <div className="container mx-auto px-4 flex flex-col space-y-4">
             <a href="#" className="text-foreground hover:text-iafourchette-blue py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}>Accueil</a>
+              onClick={() => setIsMenuOpen(false)}>{t('nav.home')}</a>
             <a href="#services" className="text-foreground hover:text-iafourchette-blue py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}>Services</a>
+              onClick={() => setIsMenuOpen(false)}>{t('nav.services')}</a>
             <a href="#contact" className="text-foreground hover:text-iafourchette-blue py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}>Contact</a>
+              onClick={() => setIsMenuOpen(false)}>{t('nav.contact')}</a>
           </div>
         </div>
       )}

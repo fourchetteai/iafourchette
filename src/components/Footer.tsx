@@ -1,8 +1,10 @@
 
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="py-8 bg-iafourchette-blue text-white">
@@ -16,7 +18,7 @@ const Footer = () => {
           </div>
           
           <div className="text-sm text-white/80">
-            &copy; {currentYear} IAFOURCHETTE. Tous droits réservés.
+            &copy; {currentYear} IAFOURCHETTE. {t('footer.rights')}
           </div>
         </div>
       </div>
