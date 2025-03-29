@@ -20,3 +20,4 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           remote-path: ${{ secrets.FTP_PATH }}
+          local-path: public/ # Ajout de cette ligne
