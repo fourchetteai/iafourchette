@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Code, Bot, GraduationCap } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
 
 const ServiceCard = ({ title, description, icon: Icon }) => {
   return (
@@ -16,22 +15,20 @@ const ServiceCard = ({ title, description, icon: Icon }) => {
 };
 
 const Services = () => {
-  const { t } = useLanguage();
-  
   const services = [
     {
-      title: t('services.creation.title'),
-      description: t('services.creation.description'),
+      title: "Création de sites/apps",
+      description: "Développement clé en main de sites web et applications mobiles par nos assistants IA",
       icon: Code
     },
     {
-      title: t('services.automation.title'),
-      description: t('services.automation.description'),
+      title: "Automatisation intelligente",
+      description: "Optimisation complète de vos processus métiers grâce à nos agents IA spécialisés",
       icon: Bot
     },
     {
-      title: t('services.training.title'),
-      description: t('services.training.description'),
+      title: "Formation & Consulting",
+      description: "Maîtrise des outils digitaux grâce à nos formations personnalisées et audit stratégique",
       icon: GraduationCap
     }
   ];
@@ -39,9 +36,9 @@ const Services = () => {
   return (
     <section id="services" className="section">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 gradient-text">{t('services.title')}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 gradient-text">Nos Services</h2>
         <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
-          IAFOURCHETTE {t('hero.title').toLowerCase()}.
+          IAFOURCHETTE transforme votre entreprise grâce à l'intelligence artificielle. Découvrez nos solutions sur mesure.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
