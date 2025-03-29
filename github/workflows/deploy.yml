@@ -1,1 +1,22 @@
+name: Deploy to LWS FTP
 
+on:
+  push:
+    branches:
+      - main # ou la branche que vous utilisez
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to FTP
+        uses: easingthemes/ftp-deploy@v2
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          remote-path: ${{ secrets.FTP_PATH }}
