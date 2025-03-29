@@ -23,7 +23,7 @@ const translations = {
     // Hero section
     'hero.title': 'Transformez votre entreprise avec l\'Intelligence Artificielle',
     'hero.subtitle': 'Création digitale • Automatisation intelligente • Expertise sur mesure',
-    'hero.cta': 'Démarrer votre projet IA →',
+    'hero.cta': 'Démarrer votre projet IA',
     
     // Services section
     'services.title': 'Nos Services',
@@ -47,6 +47,13 @@ const translations = {
     'contact.message': 'Message',
     'contact.send': 'Envoyer',
     'contact.phone': '06 58 62 71 67',
+    'contact.callUs': 'Appelez-nous',
+    'contact.namePlaceholder': 'Votre nom',
+    'contact.emailPlaceholder': 'votre@email.com',
+    'contact.messagePlaceholder': 'Comment pouvons-nous vous aider ?',
+    'contact.sending': 'Envoi en cours...',
+    'contact.sendSuccess': 'Message envoyé !',
+    'contact.sendSuccessDesc': 'Nous vous contacterons dans les plus brefs délais.',
     
     // Footer
     'footer.rights': 'Tous droits réservés.'
@@ -60,7 +67,7 @@ const translations = {
     // Hero section
     'hero.title': 'Transform Your Business with Artificial Intelligence',
     'hero.subtitle': 'Digital Creation • Intelligent Automation • Tailored Expertise',
-    'hero.cta': 'Start Your AI Project →',
+    'hero.cta': 'Start Your AI Project',
     
     // Services section
     'services.title': 'Our Services',
@@ -84,6 +91,13 @@ const translations = {
     'contact.message': 'Message',
     'contact.send': 'Send',
     'contact.phone': '06 58 62 71 67',
+    'contact.callUs': 'Call us',
+    'contact.namePlaceholder': 'Your name',
+    'contact.emailPlaceholder': 'your@email.com',
+    'contact.messagePlaceholder': 'How can we help you?',
+    'contact.sending': 'Sending...',
+    'contact.sendSuccess': 'Message sent!',
+    'contact.sendSuccessDesc': 'We will contact you shortly.',
     
     // Footer
     'footer.rights': 'All rights reserved.'

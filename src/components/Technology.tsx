@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Technology = () => {
+  const { t } = useLanguage();
+  
   const technologies = [
     "Next.js 15", 
     "GPT-5", 
@@ -14,7 +17,7 @@ const Technology = () => {
     <section className="py-12 bg-iafourchette-blue/5 overflow-hidden">
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-0">Nous maîtrisons :</h2>
+          <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-0">{t('tech.subtitle')}</h2>
           
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {technologies.map((tech, index) => (
