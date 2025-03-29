@@ -2,16 +2,17 @@
 import React from 'react';
 import { Code, Bot, GraduationCap } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
-const ServiceCard = ({ title, description, icon: Icon }) => {
+const ServiceCard = ({ title, description, icon: Icon, link }) => {
   return (
-    <div className="service-card">
+    <Link to={link} className="block service-card hover:scale-105 transition-transform">
       <div className="p-4 mb-4 bg-iafourchette-blue/10 rounded-full w-16 h-16 flex items-center justify-center text-iafourchette-blue">
         <Icon size={32} />
       </div>
       <h3 className="text-xl font-bold mb-4">{title}</h3>
       <p className="text-gray-600 dark:text-gray-300">{description}</p>
-    </div>
+    </Link>
   );
 };
 
@@ -22,17 +23,20 @@ const Services = () => {
     {
       title: t('services.creation.title'),
       description: t('services.creation.description'),
-      icon: Code
+      icon: Code,
+      link: '/creation-sites-applications'
     },
     {
       title: t('services.automation.title'),
       description: t('services.automation.description'),
-      icon: Bot
+      icon: Bot,
+      link: '/automatisation-intelligente'
     },
     {
       title: t('services.training.title'),
       description: t('services.training.description'),
-      icon: GraduationCap
+      icon: GraduationCap,
+      link: '/formation-consulting'
     }
   ];
 
