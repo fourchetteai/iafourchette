@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				iafourchette: {
+					blue: '#2A5CEC',
+					purple: '#6E48AA',
+					lightPurple: '#9D50BB',
+					darkBlue: '#1A41B8',
+					lightBlue: '#4B7BFF'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,58 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
+				},
+				'gradient-shift': {
+					'0%, 100%': {
+						'background-position': '0% 50%'
+					},
+					'50%': {
+						'background-position': '100% 50%'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out forwards',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 8s ease infinite'
+			},
+			backgroundImage: {
+				'hero-gradient': 'linear-gradient(135deg, #2A5CEC 0%, #6E48AA 50%, #9D50BB 100%)',
+				'service-gradient': 'linear-gradient(to right, #2A5CEC, #6E48AA)',
+				'card-gradient': 'linear-gradient(225deg, rgba(42, 92, 236, 0.1) 0%, rgba(110, 72, 170, 0.1) 100%)'
+			},
+			fontFamily: {
+				'space': ['Space Grotesk', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif']
 			}
 		}
 	},
