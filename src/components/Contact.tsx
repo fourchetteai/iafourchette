@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import { useLanguage } from '../contexts/LanguageContext';
+import SocialWidgets from './SocialWidgets';
 
 const Contact = () => {
   const { t } = useLanguage();
@@ -140,6 +141,9 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        
+        {/* Social Media Widgets */}
+        <SocialWidgets />
       </div>
     </section>
   );
