@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="relative min-h-screen flex items-center pt-16">
       {/* Background with gradient effect */}
@@ -29,16 +32,16 @@ const Hero = () => {
       <div className="container mx-auto px-4 text-center z-10">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
-            Transformez votre entreprise avec <span className="gradient-text">l'Intelligence Artificielle</span>
+            {t('hero.title')} <span className="gradient-text">{t('hero.subtitle').split('•')[0]}</span>
           </h1>
           
           <h2 className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
-            Création digitale • Automatisation intelligente • Expertise sur mesure
+            {t('hero.subtitle')}
           </h2>
           
           <div className="animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
             <a href="#contact" className="button-primary flex items-center justify-center space-x-2 mx-auto w-fit">
-              <span>Démarrer votre projet IA</span>
+              <span>{t('hero.cta')}</span>
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>

@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -30,8 +32,8 @@ const Contact = () => {
     // Simuler une soumission du formulaire
     setTimeout(() => {
       toast({
-        title: "Message envoyé !",
-        description: "Nous vous contacterons dans les plus brefs délais."
+        title: t('contact.title'),
+        description: t('contact.subtitle')
       });
       
       setFormState({
@@ -46,7 +48,7 @@ const Contact = () => {
   return (
     <section id="contact" className="section bg-gradient-to-b from-white to-iafourchette-blue/5">
       <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">Contactez-nous</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">{t('contact.title')}</h2>
         
         <div className="flex flex-col md:flex-row gap-8 items-center justify-center">
           {/* Phone number */}
@@ -57,12 +59,12 @@ const Contact = () => {
                   <Phone className="h-8 w-8 text-iafourchette-blue" />
                 </div>
               </div>
-              <p className="text-lg mb-2">Appelez-nous</p>
+              <p className="text-lg mb-2">{t('contact.title')}</p>
               <a 
                 href="tel:+33658627167" 
                 className="text-2xl md:text-3xl font-bold gradient-text hover:opacity-80 transition-opacity"
               >
-                06 58 62 71 67
+                {t('contact.phone')}
               </a>
             </div>
           </div>
@@ -74,7 +76,7 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block mb-2 text-sm font-medium">
-                      Nom
+                      {t('contact.name')}
                     </label>
                     <Input
                       id="name"
@@ -83,13 +85,13 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="bg-white/50"
-                      placeholder="Votre nom"
+                      placeholder={t('contact.name')}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block mb-2 text-sm font-medium">
-                      Email
+                      {t('contact.email')}
                     </label>
                     <Input
                       id="email"
@@ -105,7 +107,7 @@ const Contact = () => {
                   
                   <div>
                     <label htmlFor="message" className="block mb-2 text-sm font-medium">
-                      Message
+                      {t('contact.message')}
                     </label>
                     <Textarea
                       id="message"
@@ -114,7 +116,7 @@ const Contact = () => {
                       onChange={handleInputChange}
                       required
                       className="bg-white/50 min-h-[120px]"
-                      placeholder="Comment pouvons-nous vous aider ?"
+                      placeholder={t('contact.message')}
                     />
                   </div>
                   
@@ -126,9 +128,9 @@ const Contact = () => {
                     )}
                     disabled={formState.isSubmitting}
                   >
-                    {formState.isSubmitting ? "Envoi en cours..." : (
+                    {formState.isSubmitting ? "..." : (
                       <>
-                        <span>Discutons de votre projet</span>
+                        <span>{t('contact.send')}</span>
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </>
                     )}
